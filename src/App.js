@@ -13,6 +13,7 @@ class App extends Component {
 
   //Search github users
   searchUsers = async (text) => {
+    this.setState({ loading: true });
     const res = await axios.get(
       `https://api.github.com/search/users?q=${text}`
     );
