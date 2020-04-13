@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   return (
     <div className="card text-center ">
-      <h2>Useritem</h2>
       <img
         src={avatar_url}
         alt=""
