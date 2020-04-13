@@ -8,6 +8,8 @@ class Search extends Component {
 
   static propTypes = {
     searchUsers: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
   };
 
   onSubmit = (e) => {
@@ -26,14 +28,23 @@ class Search extends Component {
             onChange={this.onChange}
             type="text"
             name="text"
+            value={this.state.text}
             placeholder="Search users...."
           />
           <input
             type="submit"
-            value="search"
+            value="Search"
             className="btn btn-dark btn-block"
           />
         </form>
+        {this.props.showClear && (
+          <button
+            className="btn btn-light btn-block"
+            onClick={this.props.clearUsers}
+          >
+            Clear
+          </button>
+        )}
       </div>
     );
   }
